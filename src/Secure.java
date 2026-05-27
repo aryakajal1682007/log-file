@@ -57,9 +57,6 @@ public class Secure {
         }
     }
 
-
-    //  LOG PROCESSOR METHOD (JDBC & Security)
-
     private static void processAndSecureLogs() {
         System.out.println("\n[*] Connecting to Database & Processing Logs...");
 
@@ -73,13 +70,12 @@ public class Secure {
             int count = 0;
 
             while ((line = reader.readLine()) != null) {
-                // A. Encrypt karo (Scramble text)
+
                 String encryptedMsg = encrypt(line);
 
-                // B. Hash generate karo (Digital Fingerprint)
                 String hash = generateHash(line);
 
-                // C. MySQL me Insert karo
+
                 pstmt.setString(1, encryptedMsg);
                 pstmt.setString(2, hash);
                 pstmt.executeUpdate();
