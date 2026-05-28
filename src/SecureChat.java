@@ -9,7 +9,7 @@ import java.util.Random;
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
 
-public class Secure {
+public class SecureChat {
 
     // --- CONFIGURATION ---
     private static final String url = "jdbc:mysql://localhost:3306/LogDB";
